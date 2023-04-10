@@ -12,7 +12,8 @@ import {ForgotPasswordComponent} from '@modules/forgot-password/forgot-password.
 import {RecoverPasswordComponent} from '@modules/recover-password/recover-password.component';
 import {MainMenuComponent} from '@pages/main-menu/main-menu.component';
 import {SubMenuComponent} from '@pages/main-menu/sub-menu/sub-menu.component';
-import { UserComponent } from '@components/user/user.component';
+import { UserListComponent } from '@components/user/user-list/user-list.component';
+import { UserDetailsComponent } from '@components/user/user-details/user-details.component';
 
 const routes: Routes = [
     {
@@ -23,8 +24,9 @@ const routes: Routes = [
         children: [
           {
             path: 'user',
-            component: UserComponent
+            component: UserListComponent
         },
+        {path:'user/:id',component:UserDetailsComponent},
         {
                 path: 'profile',
                 component: ProfileComponent
