@@ -14,6 +14,7 @@ import {MainMenuComponent} from '@pages/main-menu/main-menu.component';
 import {SubMenuComponent} from '@pages/main-menu/sub-menu/sub-menu.component';
 import { UserListComponent } from '@components/user/user-list/user-list.component';
 import { UserDetailsComponent } from '@components/user/user-details/user-details.component';
+import { UserAddComponent } from '@components/user/user-add/user-add.component';
 
 const routes: Routes = [
     {
@@ -26,6 +27,7 @@ const routes: Routes = [
             path: 'user',
             component: UserListComponent
         },
+        {path:'user/add',component:UserAddComponent},
         {path:'user/:id',component:UserDetailsComponent},
         {
                 path: 'profile',

@@ -1,0 +1,106 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <div class="container-fluid">
+      <div class="row mb-2">
+          <div class="col-sm-6">
+              <h1>{{title}}</h1>
+          </div>
+          <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">{{title}}</li>
+              </ol>
+          </div>
+      </div>
+  </div>
+  <!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <!-- Default box -->
+  <div class="container-fluid">
+      <div class="card">
+          <div class="card-header">
+              <h3 class="card-title">{{title}}</h3>
+
+              <div class="card-tools">
+                  <button
+                      type="button"
+                      class="btn btn-tool"
+                      data-widget="collapse"
+                      data-toggle="tooltip"
+                      title="Collapse"
+                  >
+                      <i class="fa fa-minus"></i>
+                  </button>
+                  <button
+                      type="button"
+                      class="btn btn-tool"
+                      data-widget="remove"
+                      data-toggle="tooltip"
+                      title="Remove"
+                  >
+                      <i class="fa fa-times"></i>
+                  </button>
+              </div>
+          </div>
+          <div class="card-body">
+              <legend>Create Item</legend>
+              <form>
+                <div class="mb-3">
+                  <label for="txtName" class="form-label">Name</label>
+                  <input type="text" name="name" [(ngModel)] = "user.firstName" class="form-control" id="txtName" />
+                </div>
+                <div class="mb-3">
+                  <label for="txtPrice" class="form-label">Price</label>
+                  <input type="number" name="price" [(ngModel)] = "user.lastName" class="form-control" id="txtPrice" />
+                </div>
+                <div class="mb-3">
+                  <label for="txtQuantity" class="form-label">Quantity</label>
+                  <input type="number" name="quantity" [(ngModel)] = "user.age" class="form-control" id="txtQuantity" />
+                </div>
+                <button type="button" (click)="storeUser()" class="btn btn-primary">Create</button>
+              </form>
+              <div class="submit-form">
+                <div *ngIf="!submitted">
+                  <div class="form-group">
+                    <label for="title">Title</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="title"
+                      required
+                      [(ngModel)]="user.firstName"
+                      name="title"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <input
+                      class="form-control"
+                      id="description"
+                      required
+                      [(ngModel)]="user.lastName"
+                      name="description"
+                    />
+                  </div>
+
+                  <button (click)="storeUser()" class="btn btn-success">Submit</button>
+                </div>
+
+                <div *ngIf="submitted">
+                  <h4>Tutorial was submitted successfully!</h4>
+                  <button class="btn btn-success" (click)="newUser()">Add</button>
+                </div>
+              </div>
+                      </div>
+          <!-- /.card-body -->
+          <div class="card-footer">{{title}}</div>
+          <!-- /.card-footer-->
+      </div>
+  </div>
+  <!-- /.card -->
+</section>
+<!-- /.content -->
