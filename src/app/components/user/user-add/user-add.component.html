@@ -48,20 +48,20 @@
 
           <div class="card-body">
               <legend>Create Item</legend>
-              <form>
+              <form [formGroup]="userForm" (ngSubmit)="storeUser()" novalidate>
                 <div class="mb-3">
                   <label for="firstName" class="form-label">first name</label>
-                  <input type="text" name="firstName" [(ngModel)] = "user.firstName" class="form-control" id="firstName" />
+                  <input type="text" name="firstName" [(ngModel)] = "user.firstName" class="form-control" id="firstName" formControlName="firstName" />
                 </div>
                 <div class="mb-3">
                   <label for="lastName" class="form-label">last name</label>
-                  <input type="text" name="lastName" [(ngModel)] = "user.lastName" class="form-control" id="lastName" />
+                  <input type="text" name="lastName" [(ngModel)] = "user.lastName" class="form-control" id="lastName" formControlName="lastName" />
                 </div>
                 <!-- <div class="mb-3">
                   <label for="age" class="form-label">age</label>
                   <input type="number" name="age" [(ngModel)] = "user.age" class="form-control" id="age" />
                 </div> -->
-                <button type="button" (click)="storeUser()" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Create</button>
               </form>
               <!-- <div class="submit-form">
                 <div *ngIf="!submitted">
