@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "update": "ng update --force @angular/cli @angular/core",
-    "postinstall": "ngcc"
+    "postinstall": "ngcc",
+    "json-run": "json-server --watch db.json"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [

@@ -1,7 +1,7 @@
 export interface User {
   firstName:string
   lastName:string
-  age?:number
+  age?:string
   address?:string
   profession?:string
   country?:string

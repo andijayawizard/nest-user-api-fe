@@ -15,6 +15,7 @@ import {SubMenuComponent} from '@pages/main-menu/sub-menu/sub-menu.component';
 import { UserListComponent } from '@components/user/user-list/user-list.component';
 import { UserDetailsComponent } from '@components/user/user-details/user-details.component';
 import { UserAddComponent } from '@components/user/user-add/user-add.component';
+import { UserEditComponent } from '@components/user-edit/user-edit.component';
 
 const routes: Routes = [
     {
@@ -29,6 +30,7 @@ const routes: Routes = [
         },
         {path:'user/add',component:UserAddComponent},
         {path:'user/:id',component:UserDetailsComponent},
+        {path:'user/edit/:id',component:UserEditComponent},
         {
                 path: 'profile',
                 component: ProfileComponent

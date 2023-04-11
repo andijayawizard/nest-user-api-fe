@@ -1,6 +1,7 @@
 /* eslint-disable @angular-eslint/use-lifecycle-interface */
 import { User } from '@/interfaces/user';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '@services/user/user.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class UserAddComponent implements OnInit {
     lastName: '',
   }
   submitted:boolean=false
-  constructor(private service:UserService){}
+  constructor(private service:UserService,private router:Router){}
   ngOnInit():void{}
   storeUser():void{
     const data={
@@ -25,9 +26,10 @@ export class UserAddComponent implements OnInit {
     this.service.createUser(data).subscribe({
       next:(res:any)=>{
         console.log(res)
-        this.submitted=true
+        // this.submitted=true
+        // this.router.navigate(['/user'])
       },
-      error:(e)=>{console.error(e)}
+      // error:(e)=>{console.error(e)}
     })
   }
   newUser():void{

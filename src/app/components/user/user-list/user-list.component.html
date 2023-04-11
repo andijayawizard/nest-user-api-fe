@@ -63,6 +63,8 @@
                   <td>{{data.lastName}}</td>
                   <td>
                     <a [routerLink]="['/user/', data.id]">details</a>
+                    <a [routerLink]="['/user/edit/', data.id]" class="btn btn-sm btn-default">edit</a>
+                    <button (click)="destroy(data.id)" class="btn btn-sm btn-danger">delete</button>
                   </td>
                 </tr>
               </tbody>

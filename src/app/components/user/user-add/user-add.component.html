@@ -45,45 +45,47 @@
                   </button>
               </div>
           </div>
+
           <div class="card-body">
               <legend>Create Item</legend>
               <form>
                 <div class="mb-3">
-                  <label for="txtName" class="form-label">Name</label>
-                  <input type="text" name="name" [(ngModel)] = "user.firstName" class="form-control" id="txtName" />
+                  <label for="firstName" class="form-label">first name</label>
+                  <input type="text" name="firstName" [(ngModel)] = "user.firstName" class="form-control" id="firstName" />
                 </div>
                 <div class="mb-3">
-                  <label for="txtPrice" class="form-label">Price</label>
-                  <input type="number" name="price" [(ngModel)] = "user.lastName" class="form-control" id="txtPrice" />
+                  <label for="lastName" class="form-label">last name</label>
+                  <input type="text" name="lastName" [(ngModel)] = "user.lastName" class="form-control" id="lastName" />
                 </div>
-                <div class="mb-3">
-                  <label for="txtQuantity" class="form-label">Quantity</label>
-                  <input type="number" name="quantity" [(ngModel)] = "user.age" class="form-control" id="txtQuantity" />
-                </div>
+                <!-- <div class="mb-3">
+                  <label for="age" class="form-label">age</label>
+                  <input type="number" name="age" [(ngModel)] = "user.age" class="form-control" id="age" />
+                </div> -->
                 <button type="button" (click)="storeUser()" class="btn btn-primary">Create</button>
               </form>
-              <div class="submit-form">
+              <!-- <div class="submit-form">
                 <div *ngIf="!submitted">
                   <div class="form-group">
-                    <label for="title">Title</label>
+                    <label for="firstName">first name</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="title"
+                      id="firstName"
                       required
                       [(ngModel)]="user.firstName"
-                      name="title"
+                      name="firstName"
                     />
                   </div>
 
                   <div class="form-group">
-                    <label for="description">Description</label>
+                    <label for="lastName">last name</label>
                     <input
+                    type="text"
                       class="form-control"
-                      id="description"
+                      id="lastName"
                       required
                       [(ngModel)]="user.lastName"
-                      name="description"
+                      name="lastName"
                     />
                   </div>
 
@@ -94,8 +96,8 @@
                   <h4>Tutorial was submitted successfully!</h4>
                   <button class="btn btn-success" (click)="newUser()">Add</button>
                 </div>
-              </div>
-                      </div>
+              </div> -->
+          </div>
           <!-- /.card-body -->
           <div class="card-footer">{{title}}</div>
           <!-- /.card-footer-->

@@ -10,7 +10,7 @@ import {HeaderComponent} from '@modules/main/header/header.component';
 import {FooterComponent} from '@modules/main/footer/footer.component';
 import {MenuSidebarComponent} from '@modules/main/menu-sidebar/menu-sidebar.component';
 import {BlankComponent} from '@pages/blank/blank.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ProfileComponent} from '@pages/profile/profile.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RegisterComponent} from '@modules/register/register.component';
@@ -36,6 +36,7 @@ import {ProfabricComponentsModule} from '@profabric/angular-components';
 import {defineCustomElements} from '@profabric/web-components/loader';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
 import { UserModule } from '@modules/user/user.module';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -63,12 +64,14 @@ registerLocaleData(localeEn, 'en-EN');
         MenuItemComponent,
         ControlSidebarComponent,
         SidebarSearchComponent,
+        UserEditComponent,
     ],
     imports: [
         BrowserModule,
         StoreModule.forRoot({auth: authReducer, ui: uiReducer}),
         HttpClientModule,
         AppRoutingModule,
+        FormsModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
         ToastrModule.forRoot({

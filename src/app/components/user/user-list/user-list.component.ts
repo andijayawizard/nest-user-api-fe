@@ -1,4 +1,5 @@
 /* eslint-disable @angular-eslint/use-lifecycle-interface */
+import { User } from '@/interfaces/user';
 import { Component } from '@angular/core';
 import { UserService } from '@services/user/user.service';
 
@@ -9,15 +10,22 @@ import { UserService } from '@services/user/user.service';
 })
 export class UserListComponent {
   title:string='Users'
-  data:any=[]
+  data:User[]=[]
   constructor(private service:UserService){}
   ngOnInit():void{
     this.getUsers()
   }
   getUsers():void{
     this.service.getUsers().subscribe({
-      next:(res:any)=>{
+      next:(res:User[])=>{
         this.data=res
+      }
+    })
+  }
+  destroy(id:string):void{
+    this.service.deleteUser(id).subscribe({
+      next:()=>{
+        console.log('delete success')
       }
     })
   }
