@@ -36,7 +36,8 @@ import {ProfabricComponentsModule} from '@profabric/angular-components';
 import {defineCustomElements} from '@profabric/web-components/loader';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
 import { UserModule } from '@modules/user/user.module';
-import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { UserEditComponent } from './components/user/user-edit/user-edit.component';
+import { BlogModule } from '@modules/blog/blog.module';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -81,7 +82,8 @@ registerLocaleData(localeEn, 'en-EN');
         }),
         ProfabricComponentsModule,
         CommonModule,
-        UserModule
+        UserModule,
+        BlogModule
     ],
     providers: [],
     bootstrap: [AppComponent],
