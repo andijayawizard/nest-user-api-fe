@@ -17,6 +17,7 @@ import { UserDetailsComponent } from '@components/user/user-details/user-details
 import { UserAddComponent } from '@components/user/user-add/user-add.component';
 import { UserEditComponent } from '@components/user/user-edit/user-edit.component';
 import { ListComponent } from '@modules/blog/components/list/list.component';
+import { DetailsComponent } from '@modules/blog/components/details/details.component';
 
 const routes: Routes = [
     {
@@ -33,6 +34,7 @@ const routes: Routes = [
         {path:'user/:id',component:UserDetailsComponent},
         {path:'user/edit/:id',component:UserEditComponent},
         {path:'blog',component:ListComponent},
+        {path:'blog/:id',component:DetailsComponent},
         {
                 path: 'profile',
                 component: ProfileComponent
