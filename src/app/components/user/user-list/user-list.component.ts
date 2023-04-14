@@ -17,8 +17,8 @@ export class UserListComponent {
   }
   getUsers():void{
     this.service.getUsers().subscribe({
-      next:(res:User[])=>{
-        this.data=res
+      next:(res:any)=>{
+        this.data=res.data
       }
     })
   }
