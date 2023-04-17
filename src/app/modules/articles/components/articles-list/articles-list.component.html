@@ -65,7 +65,7 @@
                     <td>{{data.body}}</td>
                     <td>
                       <a [routerLink]="['/articles', data.id]">details</a>
-                      <a [routerLink]="['/articles', data.id]" class="btn btn-sm btn-default">edit</a>
+                      <a [routerLink]="['/articles/edit', data.id]" class="btn btn-sm btn-default">edit</a>
                       <button (click)="remove(data.id)" class="btn btn-sm btn-danger">delete</button>
                     </td>
                   </tr>

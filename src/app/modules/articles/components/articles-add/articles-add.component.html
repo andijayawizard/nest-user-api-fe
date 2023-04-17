@@ -1,0 +1,115 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>{{title}}</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">{{title}}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  
+  <!-- Main content -->
+  <section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">{{title}}</h3>
+  
+                <div class="card-tools">
+                    <button
+                        type="button"
+                        class="btn btn-tool"
+                        data-widget="collapse"
+                        data-toggle="tooltip"
+                        title="Collapse"
+                    >
+                        <i class="fa fa-minus"></i>
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-tool"
+                        data-widget="remove"
+                        data-toggle="tooltip"
+                        title="Remove"
+                    >
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+            </div>
+  
+            <div class="card-body">
+                <legend>Create {{title}}</legend>
+                <form [formGroup]="articlesForm" (ngSubmit)="storeArticles()" novalidate>
+                  <div class="mb-3">
+                    <label for="title" class="form-label">title</label>
+                    <input type="text" name="title" [(ngModel)] = "articles.title" class="form-control" id="title" formControlName="title" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="description" class="form-label">description</label>
+                    <input type="text" name="description" [(ngModel)] = "articles.description" class="form-control" id="description" formControlName="description" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="body" class="form-label">body</label>
+                    <input type="text" name="body" [(ngModel)] = "articles.body" class="form-control" id="body" formControlName="body" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="published" class="form-label">published</label>
+                    <input type="checkbox" name="published" [(ngModel)] = "articles.published" class="form-control" id="published" formControlName="published" />
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Create</button>
+                  <button type="reset" class="btn btn-danger">Reset</button>
+                </form>
+                <!-- <div class="submit-form">
+                  <div *ngIf="!submitted">
+                    <div class="form-group">
+                      <label for="firstName">first name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="firstName"
+                        required
+                        [(ngModel)]="user.firstName"
+                        name="firstName"
+                      />
+                    </div>
+  
+                    <div class="form-group">
+                      <label for="lastName">last name</label>
+                      <input
+                      type="text"
+                        class="form-control"
+                        id="lastName"
+                        required
+                        [(ngModel)]="user.lastName"
+                        name="lastName"
+                      />
+                    </div>
+  
+                    <button (click)="storeUser()" class="btn btn-success">Submit</button>
+                  </div>
+  
+                  <div *ngIf="submitted">
+                    <h4>Tutorial was submitted successfully!</h4>
+                    <button class="btn btn-success" (click)="newUser()">Add</button>
+                  </div>
+                </div> -->
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">{{title}}</div>
+            <!-- /.card-footer-->
+        </div>
+    </div>
+    <!-- /.card -->
+  </section>
+  <!-- /.content -->
+  

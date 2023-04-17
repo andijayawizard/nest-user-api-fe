@@ -20,6 +20,8 @@ import { ListComponent } from '@modules/blog/components/list/list.component';
 import { DetailsComponent } from '@modules/blog/components/details/details.component';
 import { ArticlesListComponent } from '@modules/articles/components/articles-list/articles-list.component';
 import { ArticlesDetailsComponent } from '@modules/articles/components/articles-details/articles-details.component';
+import { ArticlesAddComponent } from '@modules/articles/components/articles-add/articles-add.component';
+import { ArticlesEditComponent } from '@modules/articles/components/articles-edit/articles-edit.component';
 
 const routes: Routes = [
     {
@@ -36,8 +38,10 @@ const routes: Routes = [
             {path:'blog',component:ListComponent},
             {path:'blog/:id',component:DetailsComponent},
 
+            {path:'articles/add',component:ArticlesAddComponent},
             {path:'articles',component:ArticlesListComponent},
             {path:'articles/:id',component:ArticlesDetailsComponent},
+            {path:'articles/edit/:id',component:ArticlesEditComponent},
             {
                 path: 'profile',
                 component: ProfileComponent
