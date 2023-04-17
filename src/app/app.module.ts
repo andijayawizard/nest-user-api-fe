@@ -38,6 +38,7 @@ import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search
 import { UserModule } from '@modules/user/user.module';
 import { UserEditComponent } from './components/user/user-edit/user-edit.component';
 import { BlogModule } from '@modules/blog/blog.module';
+import { ArticlesModule } from '@modules/articles/articles.module';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -83,7 +84,8 @@ registerLocaleData(localeEn, 'en-EN');
         ProfabricComponentsModule,
         CommonModule,
         UserModule,
-        BlogModule
+        BlogModule,
+        ArticlesModule
     ],
     providers: [],
     bootstrap: [AppComponent],

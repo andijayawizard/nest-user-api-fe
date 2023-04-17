@@ -18,6 +18,8 @@ import { UserAddComponent } from '@components/user/user-add/user-add.component';
 import { UserEditComponent } from '@components/user/user-edit/user-edit.component';
 import { ListComponent } from '@modules/blog/components/list/list.component';
 import { DetailsComponent } from '@modules/blog/components/details/details.component';
+import { ArticlesListComponent } from '@modules/articles/components/articles-list/articles-list.component';
+import { ArticlesDetailsComponent } from '@modules/articles/components/articles-details/articles-details.component';
 
 const routes: Routes = [
     {
@@ -26,16 +28,17 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         canActivateChild: [AuthGuard],
         children: [
-          {
-            path: 'user',
-            component: UserListComponent
-        },
-        {path:'user/add',component:UserAddComponent},
-        {path:'user/:id',component:UserDetailsComponent},
-        {path:'user/edit/:id',component:UserEditComponent},
-        {path:'blog',component:ListComponent},
-        {path:'blog/:id',component:DetailsComponent},
-        {
+            {path: 'user', component: UserListComponent},
+            {path:'user/add',component:UserAddComponent},
+            {path:'user/:id',component:UserDetailsComponent},
+            {path:'user/edit/:id',component:UserEditComponent},
+
+            {path:'blog',component:ListComponent},
+            {path:'blog/:id',component:DetailsComponent},
+
+            {path:'articles',component:ArticlesListComponent},
+            {path:'articles/:id',component:ArticlesDetailsComponent},
+            {
                 path: 'profile',
                 component: ProfileComponent
             },

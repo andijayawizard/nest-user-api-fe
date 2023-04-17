@@ -66,6 +66,11 @@ export const MENU = [
                 iconClasses: 'far fa-address-book',
                 path: ['/blog']
             },
+            {
+                name: 'Articles',
+                iconClasses: 'far fa-address-book',
+                path: ['/articles']
+            },
         ]
     }
 ];
