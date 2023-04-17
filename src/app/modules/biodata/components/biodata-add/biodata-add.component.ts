@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Biodata } from '@modules/biodata/biodata';
 import { BiodataService } from '@modules/biodata/biodata.service';
@@ -17,13 +17,20 @@ export class BiodataAddComponent {
   }
   constructor(private service:BiodataService, private router:Router, private fb:FormBuilder){}
   ngOnInit():void{
+    // this.biodataForm=new FormGroup({
+    //   nama:new FormControl('', [Validators.required])
+    // })
     this.biodataForm=this.fb.group({
       nama:[''],
       nik:[''],
       address:['']
     })
   }
+  get f(){
+    return this.biodataForm.controls
+  }
   create():void{
+    console.log(this.biodataForm.value)
     this.service.create(this.biodataForm.value).subscribe({
       next:()=>{
         console.log('insert success')

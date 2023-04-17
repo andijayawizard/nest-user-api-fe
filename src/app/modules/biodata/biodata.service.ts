@@ -20,7 +20,7 @@ export class BiodataService {
     return this.http.get<Biodata>(`${environment.baseUrl}/biodata/${id}`)
   }
   update(id:string, data:Biodata):Observable<Biodata>{
-    return this.http.patch<Biodata>(`${environment.baseUrl}/biodata/${id}`, data)
+    return this.http.put<Biodata>(`${environment.baseUrl}/biodata/${id}`, data)
   }
   remove(id:string):Observable<Biodata>{
     return this.http.delete<Biodata>(`${environment.baseUrl}/biodata/${id}`)

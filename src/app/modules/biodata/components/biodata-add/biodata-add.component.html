@@ -52,6 +52,9 @@
                   <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
                     <input type="text" name="nama" [(ngModel)] = "biodata.nama" class="form-control" id="nama" formControlName="nama" />
+                    <div *ngIf="f.nama.touched && f.nama.invalid" class="alert alert-danger">
+                      <div *ngIf="f.nama.errors?.required">required</div>
+                    </div>
                   </div>
                   <div class="mb-3">
                     <label for="nik" class="form-label">NIK</label>
