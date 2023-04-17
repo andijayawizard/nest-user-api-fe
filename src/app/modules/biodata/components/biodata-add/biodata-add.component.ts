@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Biodata } from '@modules/biodata/biodata';
 import { BiodataService } from '@modules/biodata/biodata.service';
 
 @Component({
@@ -9,13 +10,21 @@ import { BiodataService } from '@modules/biodata/biodata.service';
   styleUrls: ['./biodata-add.component.scss']
 })
 export class BiodataAddComponent {
-  articleForm:FormGroup
+  title:string='Biodata'
+  biodataForm:FormGroup
+  biodata:Biodata={
+    nama: '',
+  }
   constructor(private service:BiodataService, private router:Router, private fb:FormBuilder){}
   ngOnInit():void{
-    
+    this.biodataForm=this.fb.group({
+      nama:[''],
+      nik:[''],
+      address:['']
+    })
   }
   create():void{
-    this.service.create(this.articleForm.value).subscribe({
+    this.service.create(this.biodataForm.value).subscribe({
       next:()=>{
         console.log('insert success')
         this.router.navigateByUrl('biodata')

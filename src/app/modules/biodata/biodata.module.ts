@@ -6,6 +6,7 @@ import { BiodataListComponent } from './components/biodata-list/biodata-list.com
 import { BiodataDetailsComponent } from './components/biodata-details/biodata-details.component';
 import { BiodataAddComponent } from './components/biodata-add/biodata-add.component';
 import { BiodataEditComponent } from './components/biodata-edit/biodata-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { BiodataEditComponent } from './components/biodata-edit/biodata-edit.com
   ],
   imports: [
     CommonModule,
-    BiodataRoutingModule
+    BiodataRoutingModule,ReactiveFormsModule
   ],
   exports:[
     BiodataListComponent,BiodataDetailsComponent,BiodataAddComponent,BiodataEditComponent

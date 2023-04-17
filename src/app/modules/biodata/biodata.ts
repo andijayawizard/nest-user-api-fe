@@ -1,4 +1,5 @@
 export interface Biodata {
     nama:string,
-    nik:string
+    nik?:string,
+    address?:string
 }
