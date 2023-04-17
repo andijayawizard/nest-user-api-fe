@@ -57,6 +57,11 @@ export const MENU = [
                 path: ['/sub-menu-2']
             },
             {
+                name: 'Biodata',
+                iconClasses: 'far fa-address-book',
+                path: ['/biodata']
+            },
+            {
                 name: 'User',
                 iconClasses: 'far fa-address-book',
                 path: ['/user']

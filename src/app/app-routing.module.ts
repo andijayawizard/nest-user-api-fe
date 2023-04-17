@@ -12,16 +12,6 @@ import {ForgotPasswordComponent} from '@modules/forgot-password/forgot-password.
 import {RecoverPasswordComponent} from '@modules/recover-password/recover-password.component';
 import {MainMenuComponent} from '@pages/main-menu/main-menu.component';
 import {SubMenuComponent} from '@pages/main-menu/sub-menu/sub-menu.component';
-import { UserListComponent } from '@components/user/user-list/user-list.component';
-import { UserDetailsComponent } from '@components/user/user-details/user-details.component';
-import { UserAddComponent } from '@components/user/user-add/user-add.component';
-import { UserEditComponent } from '@components/user/user-edit/user-edit.component';
-import { ListComponent } from '@modules/blog/components/list/list.component';
-import { DetailsComponent } from '@modules/blog/components/details/details.component';
-import { ArticlesListComponent } from '@modules/articles/components/articles-list/articles-list.component';
-import { ArticlesDetailsComponent } from '@modules/articles/components/articles-details/articles-details.component';
-import { ArticlesAddComponent } from '@modules/articles/components/articles-add/articles-add.component';
-import { ArticlesEditComponent } from '@modules/articles/components/articles-edit/articles-edit.component';
 
 const routes: Routes = [
     {
@@ -30,18 +20,6 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         canActivateChild: [AuthGuard],
         children: [
-            {path: 'user', component: UserListComponent},
-            {path:'user/add',component:UserAddComponent},
-            {path:'user/:id',component:UserDetailsComponent},
-            {path:'user/edit/:id',component:UserEditComponent},
-
-            {path:'blog',component:ListComponent},
-            {path:'blog/:id',component:DetailsComponent},
-
-            {path:'articles/add',component:ArticlesAddComponent},
-            {path:'articles',component:ArticlesListComponent},
-            {path:'articles/:id',component:ArticlesDetailsComponent},
-            {path:'articles/edit/:id',component:ArticlesEditComponent},
             {
                 path: 'profile',
                 component: ProfileComponent

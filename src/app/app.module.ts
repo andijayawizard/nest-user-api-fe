@@ -39,6 +39,7 @@ import { UserModule } from '@modules/user/user.module';
 import { UserEditComponent } from './components/user/user-edit/user-edit.component';
 import { BlogModule } from '@modules/blog/blog.module';
 import { ArticlesModule } from '@modules/articles/articles.module';
+import { BiodataModule } from '@modules/biodata/biodata.module';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -72,7 +73,6 @@ registerLocaleData(localeEn, 'en-EN');
         BrowserModule,
         StoreModule.forRoot({auth: authReducer, ui: uiReducer}),
         HttpClientModule,
-        AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
@@ -85,7 +85,9 @@ registerLocaleData(localeEn, 'en-EN');
         CommonModule,
         UserModule,
         BlogModule,
-        ArticlesModule
+        ArticlesModule,
+        BiodataModule,
+        AppRoutingModule, // this must be called last
     ],
     providers: [],
     bootstrap: [AppComponent],
