@@ -7,6 +7,7 @@ import { BiodataService } from '@modules/biodata/biodata.service';
   styleUrls: ['./biodata-list.component.scss']
 })
 export class BiodataListComponent {
+  title:string='Biodata'
   data:any[]=[]
   constructor(private service:BiodataService){}
   ngOnInit():void{
