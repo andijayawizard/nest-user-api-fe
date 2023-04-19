@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Articles } from '@modules/articles/articles';
@@ -9,7 +9,7 @@ import { ArticlesService } from '@modules/articles/articles.service';
   templateUrl: './articles-add.component.html',
   styleUrls: ['./articles-add.component.scss']
 })
-export class ArticlesAddComponent {
+export class ArticlesAddComponent implements OnInit {
   title:string='Articles'
   articlesForm:FormGroup
   articles:Articles={
