@@ -15,7 +15,8 @@ export class ArticlesAddComponent implements OnInit {
   articles:Articles={
     title: '',
     description:'',
-    body:''
+    body:'',
+    published:false
   }
   submitted:boolean=false
   constructor(private service:ArticlesService, private router:Router, private fb:FormBuilder){}
@@ -23,13 +24,15 @@ export class ArticlesAddComponent implements OnInit {
     this.articlesForm=this.fb.group({
       title:[''],
       description:[''],
-      body:['']
+      body:[''],
+      published:['']
     })
   }
   storeArticles():void{
     this.service.create(this.articlesForm.value).subscribe({
-      next:()=>{
+      next:(res:any)=>{
         console.log('insert success')
+        this.articlesForm=res
         this.router.navigateByUrl('articles')
       }
     })
